@@ -26,6 +26,10 @@ En un archivo JSP (JavaServer Pages), los símbolos `<%` y `%>` se utilizan para
 <%-- Este es un comentario en JSP que no aparecerá en el HTML generado --%>
 ```
 - <b>Directiva de página</b> (`<%@ page` ... `%>`): Configura diversas propiedades de la página JSP, como el tipo de contenido, el juego de caracteres, la clase de supertipo, etc. Algunas de las opciones más comunes son:
-```jsp
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-```
+    ```jsp
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    ```
+    - language: Especifica el lenguaje de programación utilizado en la página JSP (generalmente "java").
+    - contentType: Establece el tipo de contenido MIME de la respuesta.
+    - pageEncoding: Define la codificación de caracteres utilizada para la página JSP.
+    - import: Permite importar clases Java en la JSP
