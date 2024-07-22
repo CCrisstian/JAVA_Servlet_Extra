@@ -33,3 +33,47 @@ En un archivo JSP (JavaServer Pages), los símbolos `<%` y `%>` se utilizan para
     - contentType: Establece el tipo de contenido MIME de la respuesta.
     - pageEncoding: Define la codificación de caracteres utilizada para la página JSP.
     - import: Permite importar clases Java en la JSP
+
+<h1 align="center">HttpServletRequest y HttpServletResponse</h1>
+
+Las clases `HttpServletRequest` y `HttpServletResponse` en el contexto de los servlets de Java proporcionan la funcionalidad esencial para manejar las solicitudes y respuestas HTTP.
+
+<h2>HttpServletRequest</h2>
+
+La clase `HttpServletRequest` encapsula toda la información de una solicitud HTTP enviada por el cliente (como un navegador web) a un servidor. Proporciona varios métodos que permiten a los desarrolladores acceder a diferentes partes de la solicitud HTTP, como parámetros de solicitud, encabezados, cookies, etc.
+
+Algunos métodos comunes de `HttpServletRequest` son:
+- <b>Obtener parámetros de solicitud</b>:
+```java
+String param = req.getParameter("paramName");
+String[] values = req.getParameterValues("paramName");
+```
+- <b>Obtener información sobre la sesión</b>:
+```java
+HttpSession session = req.getSession();
+```
+
+<h2>HttpServletResponse</h2>
+
+La clase `HttpServletResponse` proporciona métodos para construir y enviar una respuesta HTTP al cliente. Permite definir el código de estado de la respuesta, escribir datos en el cuerpo de la respuesta, establecer encabezados, manejar cookies, etc.
+
+Algunos métodos comunes de `HttpServletResponse` son:
+
+- <b>Escribir en el cuerpo de la respuesta</b>:
+```java
+PrintWriter out = resp.getWriter();
+out.println("<html><body><h1>Hello, World!</h1></body></html>");
+```
+- <b>Establecer el código de estado de la respuesta</b>:
+```java
+resp.setStatus(HttpServletResponse.SC_OK);
+resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+```
+- <b>Enviar errores</b>:
+```java
+resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid request");
+```
+- <b>Redirigir a otra URL</b>:
+```java
+resp.sendRedirect("http://www.example.com");
+```
